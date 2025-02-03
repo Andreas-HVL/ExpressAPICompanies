@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>API Frontend</title>
+</head>
+<body class="p-4">
+    <div class="container">
+        <h1 class="mb-4">API Management</h1>
+
+        <!-- Get By ID -->
+        <div class="accordion mb-4" id="accordionGetById">
+            <div class="accordion-item border border-primary">
+                <h2 class="accordion-header" id="headingGetById">
+                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGetById" aria-expanded="false" aria-controls="collapseGetById">
+                        Get By ID
+                    </button>
+                </h2>
+                <div id="collapseGetById" class="accordion-collapse collapse" aria-labelledby="headingGetById" data-bs-parent="#accordionGetById">
+                    <div class="accordion-body">
+                        <div class="input-group mb-2">
+                            <input type="text" id="getByIdInput" class="form-control" placeholder="Enter ID">
+                            <button class="btn btn-primary" onclick="getById()">Get</button>
+                        </div>
+                        <div id="getByIdResult" class="border p-2 bg-light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get By Rank -->
+        <div class="accordion mb-4" id="accordionGetByRank">
+            <div class="accordion-item border border-primary">
+                <h2 class="accordion-header" id="headingGetByRank">
+                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGetByRank" aria-expanded="false" aria-controls="collapseGetByRank">
+                        Get By Rank
+                    </button>
+                </h2>
+                <div id="collapseGetByRank" class="accordion-collapse collapse" aria-labelledby="headingGetByRank" data-bs-parent="#accordionGetByRank">
+                    <div class="accordion-body">
+                        <div class="input-group mb-2">
+                            <input type="text" id="getByRankInput" class="form-control" placeholder="Enter Rank">
+                            <button class="btn btn-primary" onclick="getByRank()">Get</button>
+                        </div>
+                        <div id="getByRankResult" class="border p-2 bg-light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get All -->
+        <div class="accordion mb-4" id="accordionGetAll">
+            <div class="accordion-item border border-success">
+                <h2 class="accordion-header" id="headingGetAll">
+                    <button class="accordion-button collapsed text-white bg-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGetAll" aria-expanded="false" aria-controls="collapseGetAll">
+                        Get Next 10
+                    </button>
+                </h2>
+                <div id="collapseGetAll" class="accordion-collapse collapse" aria-labelledby="headingGetAll" data-bs-parent="#accordionGetAll">
+                    <div class="accordion-body">
+                        <button class="btn btn-success" onclick="getAll()">Get</button>
+                        <div id="getAllResult" class="border p-2 bg-light mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete By ID -->
+        <div class="accordion mb-4" id="accordionDeleteById">
+            <div class="accordion-item border border-danger">
+                <h2 class="accordion-header" id="headingDeleteById">
+                    <button class="accordion-button collapsed text-white bg-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDeleteById" aria-expanded="false" aria-controls="collapseDeleteById">
+                        Delete By ID
+                    </button>
+                </h2>
+                <div id="collapseDeleteById" class="accordion-collapse collapse" aria-labelledby="headingDeleteById" data-bs-parent="#accordionDeleteById">
+                    <div class="accordion-body">
+                        <div class="input-group mb-2">
+                            <input type="text" id="deleteByIdInput" class="form-control" placeholder="Enter ID">
+                            <button class="btn btn-danger" onclick="deleteById()">Delete</button>
+                        </div>
+                        <div id="deleteByIdResult" class="border p-2 bg-light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update By ID -->
+        <div class="accordion mb-4" id="accordionUpdateById">
+            <div class="accordion-item border border-warning">
+                <h2 class="accordion-header" id="headingUpdateById">
+                    <button class="accordion-button collapsed text-dark bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdateById" aria-expanded="false" aria-controls="collapseUpdateById">
+                        Update By ID
+                    </button>
+                </h2>
+                <div id="collapseUpdateById" class="accordion-collapse collapse" aria-labelledby="headingUpdateById" data-bs-parent="#accordionUpdateById">
+                    <div class="accordion-body">
+                        <div class="input-group mb-2">
+                            <input type="text" id="updateByIdInput" class="form-control" placeholder="Enter ID">
+                        </div>
+                        <textarea id="updateDataInput" class="form-control mb-2" rows="6">{
+    "name": "",
+    "companyNo": "",
+    "rank": "",
+    "description": "",
+    "Additional Data": ""
+}</textarea>
+                        <button class="btn btn-warning" onclick="updateById()">Update</button>
+                        <div id="updateByIdResult" class="border p-2 bg-light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create -->
+        <div class="accordion mb-4" id="accordionCreateEntry">
+            <div class="accordion-item border border-success">
+                <h2 class="accordion-header" id="headingCreateEntry">
+                    <button class="accordion-button collapsed text-white bg-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCreateEntry" aria-expanded="false" aria-controls="collapseCreateEntry">
+                        Create New Entry
+                    </button>
+                </h2>
+                <div id="collapseCreateEntry" class="accordion-collapse collapse" aria-labelledby="headingCreateEntry" data-bs-parent="#accordionCreateEntry">
+                    <div class="accordion-body">
+                        
+                        <textarea id="createEntryData" class="form-control mb-2" rows="6">{
+    "name": "",
+    "companyNo": "",
+    "rank": "",
+    "description": "",
+    "Additional Data": ""
+}</textarea>
+                        <button class="btn btn-success" onclick="createEntry()">Create</button>
+                        <div id="createResult" class="border p-2 bg-light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
