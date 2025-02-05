@@ -17,18 +17,6 @@ async function getAll() {
     }
 }
 
-// 2. Get Company by ID
-async function getById() {
-    const id = document.getElementById('getByIdInput').value;
-    try {
-        const response = await fetch(`${BASE_URL}/company/${id}`);
-        const company = await response.json();
-        displayResult('getByIdResult', company);
-    } catch (error) {
-        displayResult('getByIdResult', { error: error.message });
-    }
-}
-
 // 3. Get Company by Rank
 async function getByRank() {
     const rank = document.getElementById('getByRankInput').value;

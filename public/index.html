@@ -11,26 +11,6 @@
     <div class="container">
         <h1 class="mb-4">API Management</h1>
 
-        <!-- Get By ID -->
-        <div class="accordion mb-4" id="accordionGetById">
-            <div class="accordion-item border border-primary">
-                <h2 class="accordion-header" id="headingGetById">
-                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGetById" aria-expanded="false" aria-controls="collapseGetById">
-                        Get By ID
-                    </button>
-                </h2>
-                <div id="collapseGetById" class="accordion-collapse collapse" aria-labelledby="headingGetById" data-bs-parent="#accordionGetById">
-                    <div class="accordion-body">
-                        <div class="input-group mb-2">
-                            <input type="text" id="getByIdInput" class="form-control" placeholder="Enter ID">
-                            <button class="btn btn-primary" onclick="getById()">Get</button>
-                        </div>
-                        <div id="getByIdResult" class="border p-2 bg-light"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Get By Rank -->
         <div class="accordion mb-4" id="accordionGetByRank">
             <div class="accordion-item border border-primary">
@@ -106,7 +86,7 @@
     "companyNo": "",
     "rank": "",
     "description": "",
-    "Additional Data": ""
+    "addData": ""
 }</textarea>
                         <button class="btn btn-warning" onclick="updateById()">Update</button>
                         <div id="updateByIdResult" class="border p-2 bg-light"></div>
@@ -131,7 +111,7 @@
     "companyNo": "",
     "rank": "",
     "description": "",
-    "Additional Data": ""
+    "addData": ""
 }</textarea>
                         <button class="btn btn-success" onclick="createEntry()">Create</button>
                         <div id="createResult" class="border p-2 bg-light"></div>
